@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/kinetic-v3.6.4.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      
+      function message(msgLayer, msg) {
+        var context = msgLayer.getContext();
+        msgLayer.clear();
+        context.font = '18pt Calibri';
+        context.fillStyle = 'black';
+        context.fillText(msg, 10, 25);
+      }
+
+
+      window.onload = function () {
+        var stage = new Kinetic.Stage('container', 600, 300),
+          circleLayer  = new Kinetic.Layer(),
+          msgLayer     = new Kinetic.Layer(),
+          numEvents = 0,
+          cicrle = new Kinetic.Shape(function () {
+            var canvas = this.getCanvas(),
+              context = this.getContext(),
+              x = canvas.width / 2,
+              y = canvas.height / 2;
+            context.beginPath();
+            context.arc(x, y, 50, 0, Math.PI * 2, true);
+            context.fillStyle = 'green';
+            context.fill();
+            context.lineWidth = 4;
+            context.stroke();
+          });
+
+        circle.on('mousedown touchstart', function () {
+          //writeMessage
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+</html>
